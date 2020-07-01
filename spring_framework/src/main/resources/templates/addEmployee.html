@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>User Manager with SpringBoot</title>
+</head>
+<body>
+<div class="col-md-auto">
+    <form th:object="${users1}" th:action="@{save}" method="post">
+        <div style="clear: both;display: block;height: 10px"></div>
+
+        <div>
+            <lable th:text="Name" th:for="Name"></lable>
+            <input type="text" class="form-control" th:field="*{name}" placeholder="Name"/>
+        </div>
+        <div style="clear: both;display: block;height: 10px"></div>
+
+        <div>
+            <lable th:text="Wage" th:for="Wage"></lable>
+            <input type="text" class="form-control" th:field="*{wage}" placeholder="Wage"/>
+        </div>
+        <div style="clear: both;display: block;height: 10px"></div>
+
+        <input type="submit" value="Save new data" class="btn btn-success">
+
+    </form>
+</div>
+
+</body>
+</html>

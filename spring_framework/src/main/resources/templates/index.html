@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>User Manager with SpringBoot</title>
+</head>
+<body>
+<input type="text" name="name" id="name" th:value="${search}">
+<input type="submit" value="search">
+<div th:if="${not#lists.isEmpty(search)}">
+    <h2>Students List</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>wage</th>
+        </tr>
+        <tr th:each="search:${search}">
+            <td th:text="${search.id}">id</td>
+            <td th:text="${search.name}">name</td>
+            <td th:text="${search.wage}">phone</td>
+        </tr>
+    </table>
+</div>
+</form>
+<table class="table table-active">
+    <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>WAGE</th>
+    </tr>
+    <tr th:each="list:${listusers}">
+        <td th:text="${list.id}"></td>
+        <td th:text="${list.name}"></td>
+        <td th:text="${list.wage}"></td>
+    </tr>
+</table>
+</body>
+</html>
